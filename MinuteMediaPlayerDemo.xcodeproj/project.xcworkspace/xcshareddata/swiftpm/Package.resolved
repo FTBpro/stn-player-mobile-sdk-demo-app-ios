@@ -1,0 +1,15 @@
+{
+  "originHash" : "fc8c95fbae7abd1b2eae803bd1f4cef68c547d2d7ed261f584df8529b97ea5cd",
+  "pins" : [
+    {
+      "identity" : "stn-player-mobile-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/FTBpro/stn-player-mobile-sdk.git",
+      "state" : {
+        "revision" : "ad005adf284ba573689d57bec57ad71ae8673748",
+        "version" : "0.2.0"
+      }
+    }
+  ],
+  "version" : 3
+}
