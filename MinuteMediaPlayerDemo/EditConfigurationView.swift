@@ -24,6 +24,8 @@ struct EditConfigurationView: View {
     @State private var fullScreenSupportedOnlyOnLandscape: Bool = false
     @State private var supportFullScreen: Bool = true
     @State private var supportMinimized: Bool = true
+    @State private var adUnit: String = ""
+    @State private var adFrequency: Int = 0
 
     private var selectedModesDescription: String {
         var modes = [String]()
@@ -80,6 +82,25 @@ struct EditConfigurationView: View {
                     Toggle("FullScreen Supported Only on Landscape", isOn: $fullScreenSupportedOnlyOnLandscape)
                 }
 
+                Section(header: Text("Ads")) {
+                    TextField("Ad Unit (e.g., /123/demo)", text: $adUnit)
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled()
+
+                    Text("If an Ad Unit is set, 0 will always trigger a preroll ad.")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+
+                    Stepper(value: $adFrequency, in: 0...20) {
+                        HStack {
+                            Text("Ad Frequency")
+                            Spacer()
+                            Text("\(adFrequency)")
+                                .monospacedDigit()
+                        }
+                    }
+                }
+
                 Section {
                     Button("Apply Configuration") {
                         let newConfig = UIConfiguration(
@@ -109,6 +130,8 @@ struct EditConfigurationView: View {
                         
                         // Update the media player's UI configuration
                         MinuteMediaKit.configuration.uiConfig = newConfig
+                        MinuteMediaKit.configuration.adConfig.adUnit = adUnit
+                        MinuteMediaKit.configuration.adConfig.frequency = adFrequency
                     }
                 }
             }

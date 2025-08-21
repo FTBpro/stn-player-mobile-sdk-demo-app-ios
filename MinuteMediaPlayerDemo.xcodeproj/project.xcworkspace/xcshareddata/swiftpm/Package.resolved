@@ -6,8 +6,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/FTBpro/stn-player-mobile-sdk.git",
       "state" : {
-        "revision" : "ad005adf284ba573689d57bec57ad71ae8673748",
-        "version" : "0.2.0"
+        "branch" : "task/google-interactive-media-ads-for-minute-media-player-view",
+        "revision" : "33faaa59f8c5cb6570efd28bf27eec9ddf1e4a06"
+      }
+    },
+    {
+      "identity" : "swift-package-manager-google-interactive-media-ads-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/googleads/swift-package-manager-google-interactive-media-ads-ios",
+      "state" : {
+        "revision" : "60c708f077d0d2aa02dfbfdeb60f2be8feb1c548",
+        "version" : "3.26.1"
       }
     }
   ],
